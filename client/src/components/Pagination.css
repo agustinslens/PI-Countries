@@ -1,0 +1,24 @@
+ul {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {display: inline;}
+
+ul li button {
+    color: rgb(184, 184, 184);
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: rgb(63, 63, 63);
+    border: 1px solid #ddd; /* Gray */
+    transition: background-color .3s;
+    cursor:pointer;
+}
+
+ul li button:hover:not(.active) {background-color: rgb(255, 160, 160);}
+nav {
+    text-align: center;
+
+}
