@@ -5,19 +5,32 @@ ul {
 }
 
 ul li {display: inline;}
-
+.aaaasd{
+    
+}
+.zxc{
+    background-color: rgba(255, 0, 0, 0.692);
+}
 ul li button {
-    color: rgb(184, 184, 184);
+
+    background-color: #fff;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
-    background-color: rgb(63, 63, 63);
-    border: 1px solid #ddd; /* Gray */
-    transition: background-color .3s;
+    opacity: 0.7;
+    border: 1px solid #ddd;
     cursor:pointer;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-ul li button:hover:not(.active) {background-color: rgb(255, 160, 160);}
+ul li button:hover{
+    transform: translate(0,-6px);
+    box-shadow: 10px -10px 25px 0 rgba(248, 220, 64, 0.5),-10px 10px 25px 0 rgba(64, 67, 248, 0.5);
+}
+ul li button:active{
+    transform: translate(0, 0);
+    background:  linear-gradient(255deg, #eea435 0%, #1784dd 50%, #dd8f8f 100%);
+  }
 nav {
     text-align: center;
 

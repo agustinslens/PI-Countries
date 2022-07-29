@@ -1,7 +1,9 @@
 import {
     GET_ALL_COUNTRIES, GET_BY_NAME,
     CLEAR_PAGE, SORT_COUNTRIES,
-    SORT_CONTINENT, GET_COUNTRY_DETAIL, CREATE_ACTIVITY
+    SORT_CONTINENT, GET_COUNTRY_DETAIL,
+    GET_ALL_ACTIVITIES,ACTIVITIES
+
 } from '../actions';
 
 
@@ -9,7 +11,8 @@ const initialState = {
     countries: [],
     countrybyName: {},
     countryDetail: {},
-    activities: []
+    activities: [],
+    filterAct:[]
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -27,7 +30,8 @@ const rootReducer = (state = initialState, action) => {
         case CLEAR_PAGE:
             return {
                 ...state,
-                countrybyName: action.payload
+                countrybyName: {},
+                filterAct:[]
             }
         case SORT_COUNTRIES:
             return {
@@ -44,10 +48,19 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 countryDetail: action.payload
             }
-        case CREATE_ACTIVITY:
+        case GET_ALL_ACTIVITIES:
             return {
                 ...state,
-                activities: state.activities.concat(action.payload)
+                activities: state.activities.filter(e => {
+                    return e.id === action.payload.id
+                })
+                    .concat(action.payload)
+            }
+
+        case ACTIVITIES:
+            return {
+                ...state,
+                filterAct: action.payload
             }
 
         default:

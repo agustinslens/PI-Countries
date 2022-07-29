@@ -1,0 +1,155 @@
+.imgact {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.conteiner-act {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 0%;
+    color: #fff;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+.countrdetail{
+    color: rgb(0, 0, 0);
+    padding: 1%;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.countrdetail:hover{
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(214, 40, 40, 0.5), -10px 10px 25px 0 rgba(87, 187, 226, 0.5);
+}
+.countrdetail h1{
+    margin-top: -0.5%;
+    
+}
+
+.imgdet {
+    border-radius: 30px;
+    width: 300px;
+    height: 160;
+    opacity: 1;
+}
+.h22{
+    border: black 1px solid;
+    border-radius: 20px;
+    text-align:center;
+    background: linear-gradient(90deg,#f8ef41 0%, #e33a89 70%, #ee824d 100%);
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.actdet {
+    
+    display: grid;
+    grid-template-columns: 250px 250px ;
+    grid-template-rows: 200px 200px 200px;
+    text-align: center;
+    
+}
+
+.eachAct {
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    text-align:center;
+    margin: 2%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.eachAct:hover{
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(248, 220, 64, 0.5), -10px 10px 25px 0 rgba(64, 67, 248, 0.5);
+}
+
+.eachAct h3{
+    margin-top: 10%;
+}
+
+.notact{
+    margin-left: 15%;
+}
+/* button create act */
+.btn-nice-act-a {
+    margin-left: 2%;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    height: 40px;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);;
+}
+
+.btn-nice-act-a::after {
+    content: "";
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    background-image: linear-gradient(255deg, #ce1414 0%, #d2d53f 70%, #dd8f8f 100%);
+    z-index: -1;
+}
+
+.btn-nice-act-a:hover {
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(248, 220, 64, 0.5), -10px 10px 25px 0 rgba(64, 67, 248, 0.5);
+}
+
+.btn-nice-act-a:hover::after {
+    transform: rotate(150deg)
+}
+
+.btn-nice-act:active {
+    transform: translate(0, 0);
+    background: linear-gradient(255deg, #ce1414 0%, #d2d53f 70%, #dd8f8f 100%);
+}
+/* button back */
+.btn-nice-act {
+    margin-top: 20px;
+    margin-left: 2%;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    height: 40px;
+    color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    background-image: linear-gradient(255deg, #d2d53f 0%, #ce1414 70%, #dd8f8f 100%);
+
+}
+
+.btn-nice-act::after {
+    content: "";
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    background-image: linear-gradient(255deg, #ce1414 0%, #d2d53f 70%, #dd8f8f 100%);
+    z-index: -1;
+}
+
+.btn-nice-act:hover {
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(248, 220, 64, 0.5), -10px 10px 25px 0 rgba(64, 67, 248, 0.5);
+}
+
+.btn-nice-act:hover::after {
+    transform: rotate(150deg)
+}
+
+.btn-nice-act:active {
+    transform: translate(0, 0);
+    background: linear-gradient(255deg, #ce1414 0%, #d2d53f 70%, #dd8f8f 100%);
+}
