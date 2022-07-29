@@ -17,14 +17,14 @@ router.post('/', async (req,res)=>{
 
 router.get('/', async (req,res)=>{
     try {
-        let newAct = await Activity.findAll({
+        let activities = await Activity.findAll({
             include:[{
                 model: Country,
-                attributes: ['name'],
+                attributes: ['name','fifa','flags','continents','poblacion'],
                 through: { attributes: [] }
             }]
         });
-        res.status(201).send(newAct)
+        res.status(201).send(activities)
     } catch (error) {
         res.status(400).send(error)
         console.log(error);
