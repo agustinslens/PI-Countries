@@ -23,7 +23,7 @@ export const getCountryByName = (value) => {
     return async function (dispatch) {
         return axios.get(`http://localhost:3001/countries?name=${value}`)
             .then(data => dispatch({ type: 'GET_BY_NAME', payload: data.data[0] }))
-            .catch(error => console.log(error.response))
+            .catch(error => alert(error.response.data))
     }
 }
 
