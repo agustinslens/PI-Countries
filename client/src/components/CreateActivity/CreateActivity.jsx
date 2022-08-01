@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, StaticRouter } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { createActivity } from "../../redux/actions";
 import './CreateActivity.css';
 import imagen from "../../img/creatact.jpg";
@@ -122,10 +122,10 @@ const CreateActivity = () => {
                             <input type="time" name='duration' value={state.duration} onChange={handleChange} />
                             <label>Season: </label>
                             <select name="season" value={state.season} onChange={handleChange}>
-                                <option value="Verano">Summer</option>
-                                <option value="Otoño">Autumn</option>
-                                <option value="Invierno">Winter</option>
-                                <option value="Primavera">Spring</option>
+                                <option value="Summer">Summer</option>
+                                <option value="Autumn">Autumn</option>
+                                <option value="Winter">Winter</option>
+                                <option value="Spring">Spring</option>
                                 <option value="All Seasons">All Seasons</option>
                             </select>
                             <label>Los paises seleccionados son: </label>{state.countryName?.map((e, key) => {

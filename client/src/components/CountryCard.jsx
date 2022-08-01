@@ -26,15 +26,3 @@ const CountryCard = (props) => {
 }
 
 export default CountryCard
-
-/* return ( */
-  {/* <div className="card">
-    <div class="grid-item">
-    {<NavLink exact to={`/Home/${props.id}`}>  <h3>{props.name}</h3></NavLink>}
-              <h3>{props.continents}</h3>
-              <img className="imggg" src={props.flags} alt=''></img>
-              <p>Population: {props.poblacion}</p>
-              </div>
-  </div> */}
-
-/* ) */

@@ -6,7 +6,7 @@ const CountryCards = (props) => {
 
   return (
     <div className="card">
-      <div class="grid-item">
+      <div className="grid-item">
         <div className="theCard">
           <div className="front">
              <h3>{props.name}</h3>

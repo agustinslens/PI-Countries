@@ -179,8 +179,8 @@ const Home = () => {
                     <select className="selectors" onChange={(e) => handleChangeAct(e)}>
                         <option >Choose Activity</option>
                         <option value="All">All</option>
-                        {act?.map(e => {
-                            return <option value={e.name}>{e.name}</option>
+                        {act?.map((e,id) => {
+                            return <option key={id} value={e.name}>{e.name}</option>
                         })}
                     </select>
                 </div>

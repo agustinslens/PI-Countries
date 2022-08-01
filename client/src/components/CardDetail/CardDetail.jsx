@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { getCountryDetail } from "../../redux/actions";
+import { getAllActivities, getCountryDetail } from "../../redux/actions";
 import img from '../../img/act.jpg';
 import './CardDetail.css';
 
@@ -13,7 +13,8 @@ const CardDetail = (props) => {
     useEffect(() => {
 
         dispatch(getCountryDetail(id))
-    }, [])
+        dispatch(getAllActivities())
+    }, [dispatch,id])
     let act = activity?.filter(e => {
 
         let x = e.Countries?.filter(f => f.fifa === id)
