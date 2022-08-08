@@ -36,6 +36,6 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
     },
   },{
-    timestamps: false //PREGUNTAR TA
+    timestamps: false 
   });
 };

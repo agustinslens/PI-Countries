@@ -22,7 +22,7 @@ module.exports = {
             let filtrado = data.map(e => {
 
                 obj = {
-                    fifa: e.fifa ? e.fifa : `${id++}`,
+                    fifa: e.cca3 ? e.cca3 : `${id++}`,
                     name: e.name ? e.name.common : 'no tiene nombre',
                     flags: e.flags ? e.flags[1] : e.flags[0] ? e.flags[0] : 'no tiene bandera',
                     continents: e.continents ? e.continents[0] : 'no tiene continente',
@@ -66,9 +66,11 @@ module.exports = {
             namespliteado[indice] = namespliteado[indice].toLowerCase()
         }
         let finishname = namespliteado.join(' ')
+        console.log(a)
         let country = await Country.findAll({
             where: {
-                name: finishname
+                name:finishname
+                
             },
             include: [{
                 model: Activity,
@@ -76,6 +78,7 @@ module.exports = {
                 through: { attributes: [] }
             }],
         })
+        console.log(country)
         if (country.length === 0) {
             throw 'el nombre no matchea con ningun pais';
         } else {

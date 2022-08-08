@@ -7,8 +7,10 @@ const { listCountries, countryDetail, countryDetailByName } = require('../contro
 
 router.get('/', async (req, res) => {
     const { name } = req.query;
+    
     if (name) {
         try {
+            console.log('dentro de routes',name)
             let l = await countryDetailByName(name);
             res.status(200).send(l);
         } catch (error) {
@@ -20,6 +22,7 @@ router.get('/', async (req, res) => {
             let l = await listCountries(x.data);
             res.status(201).send(l)
         } catch (e) {
+
             res.send(await listCountries())
 
         }
