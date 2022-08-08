@@ -58,7 +58,7 @@ const CardDetail = (props) => {
                         </div>
                     }) : <div className="notact">
                         This Country does not have any activities yet
-                        <p>Click here to add one</p> <NavLink exact to='/CreateActivity'> <button className="btn-nice-act-a"> Create Activity</button></NavLink>
+                        <p>Click here to add one</p> <NavLink exact to='/CreateActivity' > <button className="btn-nice-act-a"> Create Activity</button></NavLink>
                     </div>}
                 </div>
             </div>

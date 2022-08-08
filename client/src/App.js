@@ -2,7 +2,7 @@ import './App.css';
 import React, { useEffect } from "react";
 import { Route } from 'react-router-dom';
 import Home from '../src/components/Home';
-import CountryCard from './components/CountryCard';
+import CountryCard from './components/CountryCard/CountryCard';
 import CardDetail from '../src/components/CardDetail/CardDetail';
 import { useDispatch } from 'react-redux';
 import {  getAllCountries } from './redux/actions';

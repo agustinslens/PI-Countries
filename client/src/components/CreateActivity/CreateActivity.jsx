@@ -13,7 +13,7 @@ export function validate(state) {
 
     return errors;
 }
-const CreateActivity = () => {
+const CreateActivity = (countryName) => {
     const data = useSelector(state => state.countries)
     const [filterData, setFilterData] = useState([])
     const [errors, setError] = useState({})
@@ -21,7 +21,7 @@ const CreateActivity = () => {
         name: '',
         difficulty: 1,
         duration: '00:00',
-        season: 'Verano',
+        season: 'Summer',
         countryName: []
     })
     const dispatch = useDispatch();
@@ -49,7 +49,7 @@ const CreateActivity = () => {
             name: '',
             difficulty: 1,
             duration: '00:00',
-            season: 'Verano',
+            season: 'Summer',
             countryName: []
         })
     }

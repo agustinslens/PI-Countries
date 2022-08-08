@@ -13,7 +13,7 @@ export const ACTIVITIES = 'ACTIVITIES';
 
 export const getAllCountries = () => {
     return async function (dispatch) {
-        return axios.get('http://localhost:3001/countries')
+        return axios.get('/countries')
             .then(data => dispatch({ type: 'GET_ALL_COUNTRIES', payload: data.data }))
             .catch(error => console.log(error.response))
     }
@@ -21,8 +21,8 @@ export const getAllCountries = () => {
 
 export const getCountryByName = (value) => {
     return async function (dispatch) {
-        return axios.get(`http://localhost:3001/countries?name=${value}`)
-            .then(data => dispatch({ type: 'GET_BY_NAME', payload: data.data[0] }))
+        return axios.get(`/countries?name=${value}`)
+            .then(data =>{ dispatch({ type: 'GET_BY_NAME', payload: data.data[0] })})
             .catch(error => alert(error.response.data))
     }
 }
@@ -41,7 +41,7 @@ export function sortCountries(arr) {
 }
 export function countriesContinent(cont) {
     return async function (dispatch) {
-        let data = await axios.get('http://localhost:3001/countries')
+        let data = await axios.get('/countries')
         if (cont === 'All') {
             dispatch({ type: 'SORT_CONTINENT', payload: data.data })
         }
@@ -52,16 +52,16 @@ export function countriesContinent(cont) {
     }
 }
 export const getCountryDetail = (id) => {
-    return async function (dispatch) {
-        return axios.get(`http://localhost:3001/countries/${id}`)
-            .then(data => dispatch({ type: 'GET_COUNTRY_DETAIL', payload: data.data }))
+    return  function (dispatch) {
+        return axios.get(`/countries/${id}`)
+            .then(data =>{ dispatch({ type: 'GET_COUNTRY_DETAIL', payload: data.data })})
             .catch(error => alert(error.response.data))
     }
 }
 
 export const createActivity = (obj) => {
     return async function (dispatch) {
-        return axios.post(`http://localhost:3001/activities`, {
+        return axios.post(`/activities`, {
             name: obj.name,
             difficulty: obj.difficulty,
             duration: obj.duration,
@@ -78,8 +78,8 @@ export const createActivity = (obj) => {
 }
 
 export const getAllActivities = () => {
-    return async function (dispatch) {
-        return axios.get('http://localhost:3001/activities')
+    return  function (dispatch) {
+        return axios.get('/activities')
             .then(data => dispatch({ type: 'GET_ALL_ACTIVITIES', payload: data.data }))
             .catch(error => console.log(error.response))
     }
@@ -87,7 +87,7 @@ export const getAllActivities = () => {
 
 export function activitiesFilter(f) {
     return async function (dispatch) {
-        let data = await axios.get('http://localhost:3001/activities')
+        let data = await axios.get('/activities')
         if (f === 'All') {
             dispatch({ type: 'ACTIVITIES', payload: data.data })
         }

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { clearPage, getCountryByName, sortCountries, countriesContinent, getAllActivities, activitiesFilter } from "../redux/actions";
-import CountryCards from "./CountryCards";
-import CountryCard from "./CountryCard";
-import Pagination from "./Pagination";
+import CountryCards from "./CountryCards/CountryCards";
+import CountryCard from "./CountryCard/CountryCard";
+import Pagination from "./Pagination/Pagination";
 import ActivityCards from "./ActivityCards/ActivityCards";
 import { NavLink } from "react-router-dom";
 import './Home.css';
@@ -14,7 +14,7 @@ const Home = () => {
     const countries = useSelector(state => state.countries);
     const country = useSelector(state => state.countrybyName);
     const activities = useSelector(state => state.activities);
-    const actfilter = useSelector(state => state.filterAct)
+    const actfilter = useSelector(state => state.filterAct);
     const dispatch = useDispatch();
     const [cState, setCstate] = useState({ value: '' });
     const [state, setState] = useState();
@@ -53,7 +53,7 @@ const Home = () => {
     //ordenamiento por alfabeto
     const handleChangeA = (e) => {
         e.preventDefault();
-        if (e.target.value === 'A-Z') {
+        if (e.target.value === 'A-Z' ) {
             function SortArray(x, y) {
                 if (x.name < y.name) { return -1; }
                 if (x.name > y.name) { return 1; }
@@ -61,9 +61,10 @@ const Home = () => {
             }
             setState(true)
             let c = countries.sort(SortArray);
+            setCurrentPage(1)
             dispatch(sortCountries(c))
 
-        } else if (e.target.value === 'Z-A') {
+        } else if (e.target.value === 'Z-A' ) {
             function SortArray(x, y) {
                 if (x.name < y.name) { return 1; }
                 if (x.name > y.name) { return -1; }
@@ -71,13 +72,15 @@ const Home = () => {
             }
             setState(false)
             let c = countries.sort(SortArray);
+            setCurrentPage(1)
             dispatch(sortCountries(c))
+            
         }
     }
     //ordenamiento por poblacion
     const handleChangeP = (e) => {
         e.preventDefault();
-        if (e.target.value === 'Mayor') {
+        if (e.target.value === 'Mayor' ) {
             function SortArray(x, y) {
                 if (x.poblacion < y.poblacion) { return 1; }
                 if (x.poblacion > y.poblacion) { return -1; }
@@ -85,9 +88,10 @@ const Home = () => {
             }
             setStateP(true)
             let c = countries.sort(SortArray);
+            setCurrentPage(1)
             dispatch(sortCountries(c))
 
-        } else if (e.target.value === 'Minor') {
+        } else if (e.target.value === 'Minor' ) {
             function SortArray(x, y) {
                 if (x.poblacion < y.poblacion) { return -1; }
                 if (x.poblacion > y.poblacion) { return 1; }
@@ -95,6 +99,7 @@ const Home = () => {
             }
             setStateP(false)
             let c = countries.sort(SortArray);
+            setCurrentPage(1)
             dispatch(sortCountries(c))
         }
     }
@@ -102,11 +107,14 @@ const Home = () => {
     const handleChangeC = (e) => {
         e.preventDefault();
         console.log(e.target.value)
+        
         dispatch(countriesContinent(e.target.value));
+        setCurrentPage(1)
     }
     const handleChangeAct = (e) => {
         e.preventDefault();
         console.log(e.target.value)
+        setCurrentPage(1)
         dispatch(activitiesFilter(e.target.value));
 
     }
@@ -171,6 +179,7 @@ const Home = () => {
                         <option value="Asia">Asia</option>
                         <option value="Europe">Europe</option>
                         <option value="Oceania">Oceania</option>
+                        <option value="Antarctica">Antarctica</option>
                     </select>
                 </div>
                 <div >
